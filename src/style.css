@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Poppins&family=Ubuntu&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.5;
+    color: #262626;
+    background-color: #fdfdfd;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    max-width: 1440px;
+  }
+}
