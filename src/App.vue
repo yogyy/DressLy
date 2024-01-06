@@ -1,17 +1,19 @@
 <script setup lang="ts">
 import Navbar from '@/components/navbar.vue';
 import Hero from '@/components/hero.vue';
-import TopSelection from './components/top-selection.vue';
+import Selection from './components/top-selection.vue';
+import Order from './components/order.vue';
+import Footer from './components/footer.vue';
 </script>
 
 <template>
   <div class="layout">
     <Navbar />
     <Hero />
-    <marquee>
-      <img src="/brand.png" alt="brands" draggable="false" />
-    </marquee>
-    <TopSelection />
+    <img src="/brand.png" alt="brands" draggable="false" />
+    <Selection />
+    <Order />
+    <Footer />
   </div>
 </template>
 
