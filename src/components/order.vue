@@ -1,22 +1,31 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-const steps = ['Select Product', 'Login/Register', 'Shopping bag', 'Payment'];
-const email = ref('');
+import { ref } from "vue";
+const steps = ["Select Product", "Login/Register", "Shopping bag", "Payment"];
+const email = ref("");
 const sendEmail = () => {
   console.info(email.value);
-  email.value = '';
+  email.value = "";
 };
 </script>
 <template>
-  <div class="order">
-    <h1 class="title">The Easy Way to Order</h1>
+  <div
+    class="order relative gap-4 overflow-hidden py-6 lg:gap-8 lg:py-10 xl:py-20"
+  >
+    <h1 class="title text-2xl xl:text-5xl">The Easy Way to Order</h1>
     <div class="journey flex items-center justify-center">
-      <ul class="relative flex space-x-[30px] justify-center items-center">
+      <ul
+        class="relative flex flex-col items-center justify-center gap-[30px] lg:flex-row"
+      >
         <div
-          class="border border-[#A14B38] w-[80%] absolute border-dashed top-[22px] ml-7" />
-        <li v-for="(step, i) in steps" :key="step">
-          <div class="relative flex flex-col gap-6 items-center">
-            <div class="circle flex items-center justify-center font-bold">
+          class="absolute left-[-6px] top-[22px] ml-7 h-4/5 border border-dashed border-[#A14B38] lg:left-6 lg:h-0 lg:w-4/5"
+        />
+        <li v-for="(step, i) in steps" :key="step" class="w-full">
+          <div
+            class="relative flex min-w-[148px] items-center gap-4 lg:flex-col xl:gap-6"
+          >
+            <div
+              class="circle flex w-full items-center justify-center font-bold"
+            >
               {{ i + 1 }}
             </div>
             {{ step }}
@@ -25,23 +34,30 @@ const sendEmail = () => {
       </ul>
     </div>
   </div>
-  <div class="newsletter py-20 flex flex-col gap-8 items-center">
-    <h1 class="text-[#12070B] font-serif font-semibold text-5xl leading-[110%]">
+  <div
+    class="newsletter flex flex-col items-center gap-4 py-8 lg:gap-8 xl:py-20"
+  >
+    <h1
+      class="font-serif text-2xl font-semibold leading-[110%] text-[#12070B] xl:text-5xl"
+    >
       Subscribe Our Newsletter
     </h1>
-    <div class="flex gap-6 w-full max-w-[808px] h-[36px]">
+    <div class="flex h-[36px] w-full max-w-[808px] gap-4 lg:gap-6">
       <input
         type="text"
         placeholder="Type your mail"
         v-model="email"
-        class="p-2.5 rounded-lg w-full border placeholder:text-xs" />
+        class="w-full rounded-lg border p-2.5 placeholder:text-xs"
+      />
       <button
-        class="bg-[#E09370] w-[36px] grid place-content-center rounded-lg"
-        @click="sendEmail">
+        class="grid w-[36px] flex-shrink-0 place-content-center rounded-lg bg-[#E09370]"
+        @click="sendEmail"
+      >
         <img
           src="../assets/send.svg"
           alt="send email logo"
-          class="w-5 h-5" /><span class="sr-only">send email</span>
+          class="h-5 w-5"
+        /><span class="sr-only">send email</span>
       </button>
     </div>
   </div>
@@ -49,8 +65,7 @@ const sendEmail = () => {
 
 <style scoped>
 .title {
-  font-family: 'Lora';
-  font-size: 48px;
+  font-family: "Lora";
   line-height: 110%;
   color: #12070b;
   font-weight: 600;
@@ -61,13 +76,11 @@ const sendEmail = () => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 80px 0;
-  gap: 32px;
   border-radius: 16px;
 }
 .circle {
   padding: 8px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   background-color: #fbe3c9;
   color: #12070b;
   line-height: 140%;

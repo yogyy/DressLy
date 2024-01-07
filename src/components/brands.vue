@@ -17,7 +17,7 @@ const brands = [
 </script>
 
 <template>
-  <div class="py-16">
+  <div class="py-8 xl:py-16">
     <ul
       class="flex w-full flex-wrap justify-center gap-y-2 xs:justify-around sm:justify-between"
     >
@@ -36,7 +36,7 @@ const brands = [
 <style scoped>
 .brand {
   min-width: 100dvw;
-  max-width: 167px;
+  max-width: 160px;
   fill: #bdbdbd;
   transition-property: color, background-color, border-color,
     text-decoration-color, fill, stroke;

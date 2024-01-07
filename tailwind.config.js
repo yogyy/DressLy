@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         serif: ['Lora'],
       },
+      screens: {
+        xs: '375px',
+      },
     },
   },
   plugins: [],
