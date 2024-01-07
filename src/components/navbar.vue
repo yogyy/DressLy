@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Logo from "@/components/logo.vue";
+import Menu from "./icons/h-menu.vue";
 const links = [
   { name: "Shop" },
   { name: "New Arrival" },
@@ -17,11 +18,12 @@ const icons = [
 </script>
 
 <template>
-  <div class="flex w-[1440xpx] items-center justify-between gap-4 py-12">
-    <div class="flex w-full gap-10">
+  <div class="flex items-center justify-between gap-4 py-4 xl:py-12">
+    <button type="button" class="block md:hidden"><Menu /></button>
+    <div class="flex w-full justify-center gap-10">
       <Logo />
       <ul
-        class="flex w-full flex-shrink items-center justify-center gap-8 font-semibold text-[#1B1314]"
+        class="hidden w-full flex-shrink items-center justify-center gap-8 font-semibold text-[#1B1314] md:flex"
       >
         <li v-for="link in links" :key="link.name" class="text-base font-bold">
           <a :href="'#' + link.name.toLowerCase()">{{ link.name }}</a>
@@ -29,7 +31,11 @@ const icons = [
       </ul>
     </div>
     <ul class="flex w-fit items-center justify-center gap-6">
-      <li v-for="icon in icons" :key="icon.name" class="flex items-center">
+      <li
+        v-for="icon in icons"
+        :key="icon.name"
+        class="flex items-center max-[768px]:odd:hidden"
+      >
         <button class="w-6"><img :src="icon.icon" :alt="icon.name" /></button>
       </li>
     </ul>
